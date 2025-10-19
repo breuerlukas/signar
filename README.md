@@ -14,7 +14,13 @@ It makes it easy to emit, listen for, and respond to events across your applicat
 
 ```
 repositories {
-  maven("https://maven.pkg.github.com/breuerlukas/signar")
+  maven {
+    url = uri("https://maven.pkg.github.com/breuerlukas/signar")
+    credentials {
+      username = project.findProperty("gpr.user")?.toString() ?: System.getenv("GITHUB_USERNAME")
+      password = project.findProperty("gpr.token")?.toString() ?: System.getenv("GITHUB_TOKEN")
+    }
+  }
 }
 
 dependencies {
