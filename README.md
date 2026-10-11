@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-  implementation("de.lukasbreuer:signar:1.0.0-SNAPSHOT")
+  implementation("de.lukasbreuer:signar:1.0.0")
 }
 ```
 
